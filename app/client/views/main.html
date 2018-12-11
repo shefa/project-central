@@ -1,0 +1,27 @@
+<head>
+  <title>Project Central</title>
+</head>
+
+<template name="App_body">
+    <div class="ui vertical masthead center aligned segment">
+        {{>menu}}
+        {{> Template.dynamic template=main}} 
+    </div>
+    {{>footer}}
+</template>
+
+<template name="footer">
+    <div class="ui vertical footer segment">
+        <div class="ui container">
+            <p>Project Central - Platform for managing year 2 group projects at Cardiff University</p>
+            <p>Developed by Georgi Marinov</p>
+            <p>December, 2018</p>
+        </div>
+    </div>
+</template>
+
+<template name="App_notFound">
+    <div class="ui text container">
+        <h1 class="ui dividing header">404 Not Found</h1>
+    </div>
+</template>

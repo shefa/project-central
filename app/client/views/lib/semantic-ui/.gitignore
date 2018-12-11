@@ -1,0 +1,7 @@
+definitions/
+site/
+themes/
+semantic.less
+theme.config.import.less
+theme.import.less
+.custom.semantic.json

@@ -3,10 +3,14 @@
             <div class="ui large secondary pointing menu">
                 <a class="toc item"><i class="sidebar icon"></i></a>
                 <a href="/" class="item">Home</a>
-                <a href="/projects" class="item">Projects</a>
-                <a href="/Schedule" class="item">Schedule</a>
+                {{#if currentUser}}
+                    {{#each name in availableTabs}}
+                        <a href="/{{name}}" class="item">{{name}}</a>
+                    {{/each}}
+                {{/if}}
                 <div class="right item">
-                <a href="/logout"  class="ui button">Logout</a>
+                {{>loginButtons}}
+                <!--<a href="/login"  class="ui button">Login</a>-->
                 </div>
             </div>
         </div>

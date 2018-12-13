@@ -1,0 +1,26 @@
+<template name="supervisor_groups">
+<div class="ui text container stuff">
+	<div class="ui relaxed divided list">
+		{{#each groups}}
+			<div class="item">
+			  <i class="users icon"></i>
+			  <div class="content">
+			    <div class="header">{{name}}</div>
+			    Assigned client - {{client}}
+			    <div class="list">
+			    {{#each students}}
+				      <div class="item">
+				        <i class="right triangle icon"></i>
+				        <div class="content">
+				          <a class="header">{{name}}</a>
+				          <div class="description">Student</div>
+				        </div>
+				      </div>
+				 {{/each}}
+				 </div>
+			  </div>
+			</div>
+		{{/each}}    
+	</div>
+</div>
+</template>

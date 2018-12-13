@@ -14,5 +14,5 @@ Template.menu.helpers({
 });
 
 Template._loginButtonsLoggedInDropdown.events({
-	'click #login-buttons-logout': function (event) { FlowRouter.go('App.home');}
+	'click #login-buttons-logout': function (event) { FlowRouter.go('home');}
 })

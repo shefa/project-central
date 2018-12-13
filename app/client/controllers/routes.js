@@ -24,25 +24,39 @@ FlowRouter.route('/', {
 
 FlowRouter.route('/tools', {
   name: 'Student.tools',
-  action() { if(Meteor.userId()) BlazeLayout.render('app', { main: 'tools' }); else FlowRouter.go('home');},
+  action() { if(Meteor.user()) BlazeLayout.render('app', { main: 'tools' }); else FlowRouter.go('home');},
 });
 
 FlowRouter.route('/log', {
   name: 'Student.log',
-  action() { if(Meteor.userId()) BlazeLayout.render('app', { main: 'log' }); else FlowRouter.go('home');},
+  action() { if(Meteor.user()) BlazeLayout.render('app', { main: 'log' }); else FlowRouter.go('home');},
 });
 
 FlowRouter.route('/schedule', {
   name: 'Student.schedule',
-  action() { if(Meteor.userId()) BlazeLayout.render('app', { main: 'schedule' }); else FlowRouter.go('home');},
+  action() { if(Meteor.user()) BlazeLayout.render('app', { main: 'schedule' }); else FlowRouter.go('home');},
 });
 
 FlowRouter.route('/files', {
   name: 'Student.files',
-  action() { if(Meteor.userId()) BlazeLayout.render('app', { main: 'files' }); else FlowRouter.go('home');},
+  action() { if(Meteor.user()) BlazeLayout.render('app', { main: 'files' }); else FlowRouter.go('home');},
 });
 
 FlowRouter.route('/coursework', {
   name: 'Student.coursework',
-  action() { if(Meteor.userId()) BlazeLayout.render('app', { main: 'coursework' }); else FlowRouter.go('home');},
+  action() { if(Meteor.user()) BlazeLayout.render('app', { main: 'coursework' }); else FlowRouter.go('home');},
+});
+
+FlowRouter.route('/contribution', {
+  name: 'Supervisor.contribution',
+  action() { if(Meteor.user()&&Meteor.user().profile&&Meteor.user().profile['supervisor']) 
+              BlazeLayout.render('app', { main: 'contribution' }); 
+            else FlowRouter.go('home');},
+});
+
+FlowRouter.route('/groups', {
+  name: 'Supervisor.groups',
+  action() { if(Meteor.user()&&Meteor.user().profile&&Meteor.user().profile['supervisor']) 
+              BlazeLayout.render('app', { main: 'supervisor_groups' }); 
+            else FlowRouter.go('home');},
 });

@@ -23,9 +23,9 @@
   padding: 5vh 0em;
 }
 .stuff {
-  margin-top: 3em !important;
+  padding-top: 3em !important;
 }
-a, a:hover {
+.right a, .right a:hover {
   color: inherit;
 }
 img {
@@ -49,4 +49,13 @@ td {
 }
 .columnLogin {
   max-width: 450px;
+}
+
+.accounts-dialog {
+  right: 0 !important;
+  left: auto !important;
+}
+
+.rules{
+    padding: 2em !important;
 }

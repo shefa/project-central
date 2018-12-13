@@ -13,12 +13,36 @@ function wait_for_x(path,i)
 FlowRouter.triggers.enter([function(context){wait_for_x(context.path,0);}]);
 FlowRouter.triggers.exit([function(context){$('a[href="'+context.path+'"]').removeClass("active");}]);
 
+FlowRouter.notFound = {
+  action() { BlazeLayout.render('app', { main: 'notFound' }); },
+};
 
 FlowRouter.route('/', {
-  name: 'App.home',
-  action() { BlazeLayout.render('App_body', { main: 'home_page' }); },
+  name: 'home',
+  action() { BlazeLayout.render('app', { main: 'home' }); },
 });
 
-FlowRouter.notFound = {
-  action() { BlazeLayout.render('App_body', { main: 'App_notFound' }); },
-};
+FlowRouter.route('/tools', {
+  name: 'Student.tools',
+  action() { if(Meteor.userId()) BlazeLayout.render('app', { main: 'tools' }); else FlowRouter.go('home');},
+});
+
+FlowRouter.route('/log', {
+  name: 'Student.log',
+  action() { if(Meteor.userId()) BlazeLayout.render('app', { main: 'log' }); else FlowRouter.go('home');},
+});
+
+FlowRouter.route('/schedule', {
+  name: 'Student.schedule',
+  action() { if(Meteor.userId()) BlazeLayout.render('app', { main: 'schedule' }); else FlowRouter.go('home');},
+});
+
+FlowRouter.route('/files', {
+  name: 'Student.files',
+  action() { if(Meteor.userId()) BlazeLayout.render('app', { main: 'files' }); else FlowRouter.go('home');},
+});
+
+FlowRouter.route('/coursework', {
+  name: 'Student.coursework',
+  action() { if(Meteor.userId()) BlazeLayout.render('app', { main: 'coursework' }); else FlowRouter.go('home');},
+});

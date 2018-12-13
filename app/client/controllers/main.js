@@ -1,4 +1,5 @@
 import { Template } from 'meteor/templating';
+import { FlowRouter } from 'meteor/kadira:flow-router';
 import '../views/main.html';
 
 Template.menu.helpers({
@@ -12,15 +13,6 @@ Template.menu.helpers({
   },
 });
 
-/*
-Template.hello.helpers({
-  counter() {
-    return 1;
-  },
-});
-
-Template.hello.events({
-  'click button'(event, instance) {
-  },
-});
-*/
+Template._loginButtonsLoggedInDropdown.events({
+	'click #login-buttons-logout': function (event) { FlowRouter.go('App.home');}
+})

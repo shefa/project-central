@@ -34,8 +34,11 @@ Since Project Central is in development state, there are some testing accounts o
 
 Registering on the system will create a student account.
 
-If you wish to use different functionality, you must use the accounts below:
+If you wish to use different functionality, check the testing accounts below:
 
+* Student Account ( You can create your own )
+  * E-mail: student@test.com
+  * Pass:   123student
 * Module Leader Account
   * E-mail: leader@test.com
   * Pass:   123leader
@@ -45,6 +48,4 @@ If you wish to use different functionality, you must use the accounts below:
 * Supervisor Account
   * E-mail: supervisor@test.com
   * Pass:   123supervisor
-* Student Account ( You can create your own )
-  * E-mail: student@test.com
-  * Pass:   123student
+
